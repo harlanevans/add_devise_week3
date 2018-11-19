@@ -1,2 +1,12 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<h1>Add Post</h1>
+<%= form_with(model: @post, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, required: true, placeholder: "Title" %>
+  </div>
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_field :body, required: true, placeholder: "Body" %>
+  </div>
+  <%= f.submit %>
+<% end %>
